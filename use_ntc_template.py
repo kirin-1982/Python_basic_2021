@@ -13,7 +13,7 @@ sw2 = {
 
 conn = ConnectHandler(**sw2)
 print('Successfully connected to ' + sw2['ip'])
-interfaces = conn.send_command('show ip int brief', use_textfsm=True)
+interfaces = conn.send_command('show ip int brief', use_textfsm=True)   # Test ntc-template module
 print(interfaces)
 for interface in interfaces:
     if interface["status"] == 'up' and interface["ipaddr"] != 'unassigned':
